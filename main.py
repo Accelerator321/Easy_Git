@@ -25,8 +25,11 @@ from commands.set_remote import set_remote
 # patterns = commands.keys()
 
 
+read = True
 while(True):
 
+    if(read):
+        print("Enter Input-")
     text = listen()
 
 
@@ -92,6 +95,8 @@ while(True):
     
     else:
         print('No matching command found')
+    
+    print('\n'+'_'*10 + "divider" +"_"*10 + '\n')
 
 
 

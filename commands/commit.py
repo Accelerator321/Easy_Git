@@ -6,5 +6,5 @@ def commit():
 
     print('Enter commit message-')
     message = listen(read = True)
-    out = execute(f'git commit -m {message}')
+    out = execute(f'git commit -m "{message}"')
     return out

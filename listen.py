@@ -19,6 +19,7 @@ def listen(read= True):
         text = None
 
         while(not text):
+            print("you:", end=" ")
             text = input()
         return text
     text =None
@@ -26,7 +27,7 @@ def listen(read= True):
         text = takecom()
         if(text ==None): print("Could not listen")
         else:
-            print(f"you said: {text}")
+            print(f"you: {text}")
     return text
         
 
