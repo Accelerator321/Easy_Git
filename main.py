@@ -68,7 +68,7 @@ while(True):
         change_branch()
 
     elif 'push' in text:
-        if '-f' in text:
+        if '-f' in text or "force" in text:
             push('-f')
         else:
             push()
