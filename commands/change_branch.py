@@ -2,7 +2,7 @@ from execute import execute
 from commands.new_branch import new_branch
 
 def change_branch():
-    branches= execute('git branch -r')
+    branches= execute('git branch')
     branches = branches[0: len(branches)-1]
     branches = branches.split('\n')
 
@@ -10,7 +10,7 @@ def change_branch():
     for i in range(len(branches)):
         print(f'{i+1}.{branches[i]}')
 
-    print(f'{len(branches)}. create New BRANCH')
+    print(f'{len(branches)+1}. create New BRANCH')
 
     while(True):
         try:

@@ -7,6 +7,7 @@ from listen import listen
 from commands.push import push
 from commands.new_branch import new_branch
 from commands.change_branch import change_branch
+from commands.commit import commit
 
 
 
@@ -36,6 +37,23 @@ elif ('change' in text  and 'branch' in text) or 'checkout' in text:
 
 elif 'push' in text:
     push()
+
+elif "add" in text and 'remote' not in text:
+    out = execute('git add .')
+    print("added all files")
+
+elif "status" in text:
+    out = execute('git status')
+    print(out)
+
+elif "log" in text or "logs" in text:
+    out = execute('git log')
+    print(out)
+
+elif "commit" in text:
+    commit()
+
+# elif 
 
 
 
