@@ -16,9 +16,9 @@ def takecom():
 
 def listen(read= True):
     if(read):
-        text = '\n'
+        text = None
 
-        while(text== '\n'):
+        while(not text):
             text = input()
         return text
     text =None

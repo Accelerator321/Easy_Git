@@ -12,7 +12,7 @@ patterns = commands.keys()
 
 
 
-def push():
+def push(mode=""):
     branches= execute('git branch -r')
     branches = branches[0: len(branches)-1]
     branches = branches.split('\n')
@@ -21,6 +21,7 @@ def push():
     for i in range(len(branches)):
         print(f'{i+1}.{branches[i]}')
 
+    print('Enter option- No')
     while(True):
         try:
             ind = int(input()) -1
@@ -28,9 +29,9 @@ def push():
         except Exception:
             continue
     
-    if(ind <0): ind = 0
+    if(ind <0 or ind>= len(branches)): ind = 0
 
-    out = execute(f'git push {branches[ind]}')
+    out = execute(f'git push {mode} {branches[ind]}')
 
     print(out)
 
