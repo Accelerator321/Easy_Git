@@ -96,7 +96,7 @@ while(True):
 
 
     #  Initialize repository
-    elif 'init' in query or 'initialize' in query:
+    elif 'init' in query or 'initialise' in query:
         out =execute('git init')
         print(out)
 
