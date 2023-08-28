@@ -44,5 +44,5 @@ def push(mode=""):
     # out = execute(f'git push {mode} {branches[ind]}')
     out = execute(f'git push {mode} {sources[source_ind]} {branch}')
 
-    print(out)
+    return out
 

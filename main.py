@@ -133,10 +133,18 @@ while(True):
 
     #  Push changes
     elif 'push' in query:
+        start = execute('git log')
         if '-f' in query or "force" in query:
             push('-f')
         else:
             push()
+        
+        end = execute('git log')
+
+        if(len(end)> len(start)):
+            wreak("push succesfull")
+
+        print(out)
     
 
     #  Pull command
@@ -145,6 +153,7 @@ while(True):
             pull('-f')
         else:
             pull()
+        print(out)
 
     
 
@@ -152,7 +161,7 @@ while(True):
 
     elif ("add" in query or "stage" in query) and 'remote' not in query:
         out = execute('git add .')
-        print("added all files")
+        wreak("added all files")
 
 
     #  Status command
