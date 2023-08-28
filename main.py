@@ -14,15 +14,6 @@ from commands.set_remote import set_remote
 
 
 
-# execute(com)
-
-# Reading all commands 
-# commands_file = open('./commands.json','r')
-
-# commands = commands_file.read()
-# commands_file.close()
-# commands = json.loads(commands)
-# patterns = commands.keys()
 
 
 read = True
@@ -30,66 +21,68 @@ while(True):
 
     if(read):
         print("Enter Input-")
-    text = listen()
+    query = listen()
+    query =query.split()
+    d = {}
+    for item in query:
+        d[item] = 1
+
+    query = d
+    
 
 
 
-    if 'init' in text or 'initialize' in text:
+    if 'init' in query or 'initialize' in query:
         out =execute('git init')
         print(out)
 
-    elif 'remote' in text:
-        if "add" in text:
+    elif 'remote' in query:
+        if "add" in query:
             out = add_remote()
             if(out != None):
                 print('Added succesfully')
         
-        if "set" in text:
+        if "set" in query:
             out = set_remote()
             out = execute('git remote -v')
             print(out)
         
         else:
             v = ""
-            if "-v" in text:
+            if "-v" in query:
                 v = '-v'
             out = execute(f'git remote {v}')
             print(out)
-        
-        
-        # if "set" in text:
-        #     out = set_remote()
-        #     print(out)
 
-    elif ('new' in text or 'create' in text) and 'branch' in text:
+    elif ('new' in query or 'create' in query) and 'branch' in query:
         new_branch()
 
-    elif ('change' in text  and 'branch' in text) or 'checkout' in text:
+    elif ('change' in query  and 'branch' in query) or 'checkout' in query:
         change_branch()
 
-    elif 'push' in text:
-        if '-f' in text or "force" in text:
+    elif 'push' in query:
+        if '-f' in query or "force" in query:
             push('-f')
         else:
             push()
 
-    elif "add" in text and 'remote' not in text:
+    elif "add" in query and 'remote' not in query:
         out = execute('git add .')
         print("added all files")
 
-    elif "status" in text:
+    elif "status" in query:
         out = execute('git status')
         print(out)
 
-    elif "log" in text or "logs" in text:
+    elif "log" in query or "logs" in query:
         out = execute('git log')
         print(out)
 
-    elif "commit" in text:
+    elif "commit" in query:
         out =commit()
         print(out)
 
-    elif "reset" in text:
+    elif "reset" in query:
         out = reset()
         print(out)
     

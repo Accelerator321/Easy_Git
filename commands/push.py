@@ -3,12 +3,6 @@ from execute import execute
 from search import search
 import json
 
-# commands_file = open('./commands.json','r')
-
-# commands = commands_file.read()
-# commands_file.close()
-# commands = json.loads(commands)
-# patterns = commands.keys()
 
 
 
