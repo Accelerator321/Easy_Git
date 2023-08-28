@@ -141,8 +141,9 @@ while(True):
         
         end = execute('git log')
 
-        if(len(end)> len(start)):
-            wreak("push succesfull")
+        print(len(end),len(start))
+        # if(len(end)> len(start)):
+        #     wreak("push succesfull")
 
         print(out)
     
