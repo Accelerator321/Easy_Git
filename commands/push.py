@@ -38,7 +38,7 @@ def push(mode=""):
     source_ind -=1
     
     # if(ind <0 or ind>= len(branches)): ind = 0
-    print('Enter branch name-')
+    wreak('Enter branch name-')
     branch = listen()
 
     # out = execute(f'git push {mode} {branches[ind]}')

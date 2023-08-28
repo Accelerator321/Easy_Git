@@ -56,12 +56,6 @@ while(True):
     if "stop" in query or "exit" in query:
         exit()
 
-
-    #  Show current directory
-    elif "current" in query or 'working' in query or "directory" in query:
-        print(os.getcwd())
-
-
     #  Change working directory 
     elif 'change' in query and ('folder' in query or 'directory' in query):
         
@@ -76,7 +70,14 @@ while(True):
             
             except Exception:
                 wreak('Enter valid directory')
+                
                 continue
+    #  Show current directory
+    elif "current" in query or 'working' in query or "directory" in query:
+        print(os.getcwd())
+
+
+    
 
 
     # Change operation mode  
