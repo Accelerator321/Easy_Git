@@ -1,4 +1,5 @@
 import speech_recognition as sr
+from speak import wreak
 def takecom():
     r = sr.Recognizer()
     try:
@@ -25,7 +26,7 @@ def listen(read= True):
     text =None
     while(text ==None):
         text = takecom()
-        if(text ==None): print("Could not listen")
+        if(text ==None): wreak("Could not listen")
         else:
             print(f"you: {text}")
     return text

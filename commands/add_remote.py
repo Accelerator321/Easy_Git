@@ -1,5 +1,6 @@
 from execute import execute
 from listen import listen
+from speak import wreak
 
 def add_remote():
     print('ADD AS-')
@@ -8,7 +9,7 @@ def add_remote():
     print("3. new")
     
     d = {1:'origin', 2:"upstream"}
-    print('Enter option no-')
+    wreak('Enter option no-')
     while(True):
         try:
             opt = int(listen(read = True))
@@ -17,14 +18,14 @@ def add_remote():
             continue
 
     if(opt >=3):
-        print('Enter Name-')
+        wreak('Enter Name-')
         origin = listen()
     elif opt<=0:
         opt = 1
     else:
         origin = d[opt]
     
-    print('Enter Url-')
+    wreak('Enter Url-')
     url = listen()
 
     out = execute(f'git remote add {origin} {url}')

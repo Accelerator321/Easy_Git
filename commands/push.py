@@ -1,6 +1,6 @@
 from listen import listen
 from execute import execute
-import json
+from speak import wreak
 
 
 
@@ -16,7 +16,8 @@ def push(mode=""):
         print(i+1,"- ", sources[i])
     
 
-    print('\npleae enter an index-')
+    print('\n')
+    wreak('pleae enter an index-')
     
     source_ind = -1
     while(True):
@@ -24,11 +25,12 @@ def push(mode=""):
             source_ind= int(listen(read=True))
         # break
         except Exception:
-            print("Please enter a valid index")
+            wreak("Please enter a valid index")
             continue
 
         if(source_ind<=0 or source_ind >len(sources)):
-            print(source_ind, len(sources),source_ind<=0,source_ind >len(sources) )
+            wreak("Please enter a valid index")
+            continue
         else:
             break
     

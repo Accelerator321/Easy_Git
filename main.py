@@ -10,6 +10,7 @@ from commands.commit import commit
 from commands.reset import reset
 from commands.add_remote import add_remote
 from commands.set_remote import set_remote
+from speak import wreak
 import os
 
 
@@ -40,7 +41,9 @@ while(True):
 
     #  Taking user input
     if(read):
-        print("Enter Input-")
+        wreak("Please enter Input-")
+    else:
+        wreak("Please speak your command")
     query = listen(read)
     query =query.split()
     d = {}
@@ -76,7 +79,7 @@ while(True):
 
 
     # Change operation mode  
-    elif "change" in query and "mode" in query:
+    elif ("change" in query or "switch" in query )and "mode" in query:
         read  = (not read)
         print(read)
         mode_data["read"] = read

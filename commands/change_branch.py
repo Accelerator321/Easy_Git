@@ -1,6 +1,7 @@
 from execute import execute
 from commands.new_branch import new_branch
 
+
 def change_branch():
     branches= execute('git branch')
     branches = branches[0: len(branches)-1]
