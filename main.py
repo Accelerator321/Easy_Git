@@ -5,6 +5,7 @@ from search import search
 from execute import execute
 from listen import listen
 from commands.pull import pull
+from commands.push import push
 from commands.new_branch import new_branch
 from commands.change_branch import change_branch
 from commands.commit import commit
@@ -72,7 +73,7 @@ while(True):
         else:
             pull()
 
-    elif "add" in query and 'remote' not in query:
+    elif ("add" in query or "stage" in query) and 'remote' not in query:
         out = execute('git add .')
         print("added all files")
 
