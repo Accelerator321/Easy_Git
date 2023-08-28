@@ -5,6 +5,7 @@ from search import search
 from execute import execute
 from listen import listen
 from commands.push import push
+from commands.pull import pull
 from commands.new_branch import new_branch
 from commands.change_branch import change_branch
 from commands.commit import commit
@@ -65,6 +66,12 @@ while(True):
             push('-f')
         else:
             push()
+    
+    elif "pull" in query:
+        if '-f' in query or "force" in query:
+            pull('-f')
+        else:
+            pull()
 
     elif "add" in query and 'remote' not in query:
         out = execute('git add .')
