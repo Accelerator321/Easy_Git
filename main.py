@@ -67,6 +67,7 @@ while(True):
         
     
         while(True):
+            wreak("Please enter the directory path")
             try:
                 dir = listen(read)
                 os.chdir(dir)
@@ -74,7 +75,7 @@ while(True):
                 break
             
             except Exception:
-                print('Enter valid directory')
+                wreak('Enter valid directory')
                 continue
 
 
