@@ -133,27 +133,23 @@ while(True):
 
     #  Push changes
     elif 'push' in query:
-        start = execute('git log')
+       
         if '-f' in query or "force" in query:
-            push('-f')
+            out= push('-f')
         else:
-            push()
-        
-        end = execute('git log')
-
-        print(len(end),len(start))
-        # if(len(end)> len(start)):
-        #     wreak("push succesfull")
-
+            out= push()
+      
         print(out)
     
 
     #  Pull command
     elif "pull" in query:
+        
         if '-f' in query or "force" in query:
-            pull('-f')
+           out =  pull('-f')
         else:
-            pull()
+            out = pull()
+        
         print(out)
 
     
