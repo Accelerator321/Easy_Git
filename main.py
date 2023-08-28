@@ -4,7 +4,6 @@ import json
 from search import search
 from execute import execute
 from listen import listen
-from commands.push import push
 from commands.pull import pull
 from commands.new_branch import new_branch
 from commands.change_branch import change_branch
