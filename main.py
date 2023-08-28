@@ -122,18 +122,7 @@ while(True):
             print(out)
 
 
-
-    #  Create new branch
-    elif ('new' in query or 'create' in query) and 'branch' in query:
-        new_branch()
-
-
-    #  Change branch
-    elif ('change' in query  and 'branch' in query) or 'checkout' in query:
-        change_branch()
-
-
-    #  Push changes
+      #  Push changes
     elif 'push' in query:
        
         if '-f' in query or "force" in query:
@@ -153,6 +142,18 @@ while(True):
             out = pull()
         
         print(out)
+
+    #  Create new branch
+    elif ('new' in query or 'create' in query) and 'branch' in query:
+        new_branch()
+
+
+    #  Change branch
+    elif ('change' in query  and 'branch' in query) or 'checkout' in query:
+        change_branch()
+
+
+  
 
     
 
