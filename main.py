@@ -100,6 +100,26 @@ while(True):
         out =execute('git init')
         print(out)
 
+      #  Push changes
+    elif 'push' in query:
+       
+        if '-f' in query or "force" in query:
+            out= push('-f')
+        else:
+            out= push()
+      
+        print(out)
+    
+
+    #  Pull command
+    elif "pull" in query:
+        
+        if '-f' in query or "force" in query:
+           out =  pull('-f')
+        else:
+            out = pull()
+        
+        print(out)
 
     #  Add remote repository
 
@@ -122,26 +142,7 @@ while(True):
             print(out)
 
 
-      #  Push changes
-    elif 'push' in query:
-       
-        if '-f' in query or "force" in query:
-            out= push('-f')
-        else:
-            out= push()
-      
-        print(out)
     
-
-    #  Pull command
-    elif "pull" in query:
-        
-        if '-f' in query or "force" in query:
-           out =  pull('-f')
-        else:
-            out = pull()
-        
-        print(out)
 
     #  Create new branch
     elif ('new' in query or 'create' in query) and 'branch' in query:
