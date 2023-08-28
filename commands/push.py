@@ -1,6 +1,5 @@
 from listen import listen
 from execute import execute
-from search import search
 import json
 
 
@@ -25,7 +24,7 @@ def push(mode=""):
             source_ind= int(listen(read=True))
         # break
         except Exception:
-            print("Please enter a valid index trywala")
+            print("Please enter a valid index")
             continue
 
         if(source_ind<=0 or source_ind >len(sources)):
